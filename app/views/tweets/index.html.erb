@@ -1,0 +1,6 @@
+<%=form_for(@tweet, url: tweets_url, method: "POST") do |f| %>
+  <%=f.text_field :content %>
+  <div class="button">
+  <%=f.submit "Analyse This" %>
+  </div>
+<% end %>

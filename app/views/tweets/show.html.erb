@@ -1,0 +1,8 @@
+<p>
+<% if @tweet.is_positive %>
+  Yay! It's POSITIVE! Well done. You are now a ray of sunshine in this bleak world.
+<% else %>
+  Oh dear. Have a cup of tea and try again.
+<% end %>
+</p>
+<%= link_to "Go back and try again.", root_url %>
