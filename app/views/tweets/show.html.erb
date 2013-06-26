@@ -1,6 +1,11 @@
 <p>
 <% if @tweet.is_positive %>
   Yay! It's POSITIVE! Well done. You are now a ray of sunshine in this bleak world.
+  <iframe src="<%= @tweet.share_button.html_safe %>"
+    allowtransparency="true" frameborder="0" scrolling="no"
+    style="width:130px; height:20px;">
+  </iframe>
+
 <% else %>
   Oh dear. Have a cup of tea and try again.
 <% end %>
