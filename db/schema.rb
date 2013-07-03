@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622130040) do
+ActiveRecord::Schema.define(:version => 20130703184343) do
 
   create_table "tweets", :force => true do |t|
-    t.text    "content"
-    t.boolean "is_positive"
+    t.text   "content"
+    t.string "sentiment"
   end
 
 end

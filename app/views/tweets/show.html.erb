@@ -1,13 +1,15 @@
 <p>
-<% if @tweet.is_positive %>
+<% if @tweet.sentiment == "positive" %>
   Yay! It's POSITIVE! Well done. You are now a ray of sunshine in this bleak world.
   <iframe src="<%= @tweet.share_button.html_safe %>"
     allowtransparency="true" frameborder="0" scrolling="no"
     style="width:130px; height:20px;">
   </iframe>
 
+<% elsif @tweet.sentiment == "neutral" %>
+  Almost there, try again!
 <% else %>
-  Oh dear. Have a cup of tea and try again.
+  Oh dear. Have a cup of tea and give up.
 <% end %>
 </p>
 <%= link_to "Go back and try again.", root_url %>

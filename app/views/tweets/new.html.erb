@@ -1,0 +1,10 @@
+      <h3>Paste your Tweet in the box below and click the button</h3>
+
+<%=form_for(@tweet, url: tweets_url, method: "POST") do |f| %>
+  <%=f.text_field :content %>
+  <div class="button">
+  <%=f.submit "Analyse This" %>
+  </div>
+<% end %>
+
+

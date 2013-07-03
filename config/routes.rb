@@ -1,5 +1,5 @@
 Positwivity::Application.routes.draw do
-  root to: "tweets#index"
+  root to: "tweets#new"
 
-  resource :tweets, only: [:create, :index]
+  resources :tweets, only: [:new, :create, :index]
 end
