@@ -18,8 +18,11 @@ class TweetsController < ApplicationController
     @tweet.sentiment = sentiment.to_s
     @tweet.save
 
-    
-    render :show
+    respond_to do |format|
+
+      format.html {render :show}
+      format.js {render json:@tweet}
+    end
 
   end
 

@@ -1,9 +1,17 @@
       <h3>Paste your Tweet in the box below and click the button</h3>
 
-<%=form_for(@tweet, url: tweets_url, method: "POST") do |f| %>
+<%=form_for(@tweet, url: tweets_url, method: "POST", remote: true) do |f| %>
   <%=f.text_field :content %>
   <div class="button">
   <%=f.submit "Analyse This" %>
+  </div>
+
+  <div id="sentiment-result">
+  	<p id="sentiment-text"></p>
+		<iframe id="tweet-button"
+    	allowtransparency="true" frameborder="0" scrolling="no"
+    	style="width:130px; height:20px;">
+  		</iframe>
   </div>
 <% end %>
 

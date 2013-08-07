@@ -5,4 +5,9 @@ class Tweet < ActiveRecord::Base
   def share_button
     TweetShare.new(self).link
   end
+
+  def as_json(args)
+  	super args.merge(methods: :share_button)
+  end
+
 end

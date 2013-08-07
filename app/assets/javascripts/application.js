@@ -13,3 +13,30 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function(){ 
+	console.log("Yay it works")
+	$("#new_tweet").on("ajax:success", function(evt, data){
+	console.log("success", data)
+	
+	})
+
+	$("#new_tweet").on("ajax:complete", function(evt, data){
+	
+		var tweet = JSON.parse(data.responseText)
+
+		var sentimentText
+
+		if(tweet.sentiment === "positive"){
+			sentimentText = "Yay! It's POSITIVE! Well done. You are now a ray of sunshine in this bleak world."
+		} else if(tweet.sentiment === "neutral"){
+			sentimentText = "Almost there, try again!"
+		}else if(tweet.sentiment === "negative"){
+			sentimentText = "Oh dear. Have a cup of tea and give up."
+		}
+
+
+		$("#sentiment-text").html(sentimentText)
+		$("#tweet-button").attr("src", tweet.share_button)
+	})
+})
